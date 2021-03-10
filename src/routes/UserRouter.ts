@@ -3,7 +3,7 @@ import { UserController, CartController } from "../controllers";
 import { validateToken } from "../middlewares";
 import { body } from "express-validator";
 
-const router = Router();
+const router = Router({ mergeParams: true });
 
 router.post(
   "/signup",

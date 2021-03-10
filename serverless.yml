@@ -1,0 +1,36 @@
+service: DMfriends
+plugins:
+  - serverless-dotenv-plugin
+  - serverless-plugin-typescript
+  - serverless-offline
+
+frameworkVersion: "2"
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: ap-northeast-2
+  memorySize: 128
+  role: arn:aws:iam::501000833414:role/lambda-vpc-role
+  vpc:
+    securityGroupIds:
+      - sg-6fc9fa14
+    subnetIds:
+      - subnet-4426972f
+
+functions:
+  app:
+    handler: src/handler.lambda_handler
+    events:
+      - http:
+          path: /
+          method: any
+          cors: true
+      - http:
+          path: /{proxy+}
+          method: any
+          cors: true
+
+custom:
+  serverless-offline:
+    noPrependStageInUrl: true

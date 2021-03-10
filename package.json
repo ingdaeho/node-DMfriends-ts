@@ -6,7 +6,8 @@
   "scripts": {
     "dev:build": "tsc -w",
     "dev:run": "nodemon build/server.js",
-    "dev": "concurrently npm:dev:*"
+    "dev": "concurrently npm:dev:*",
+    "start": "serverless offline"
   },
   "keywords": [],
   "author": "",
@@ -21,10 +22,17 @@
     "concurrently": "^6.0.0",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.7",
+    "prisma": "^2.18.0",
+    "serverless-dotenv-plugin": "^3.8.1",
+    "serverless-offline": "^6.8.0",
+    "serverless-plugin-typescript": "^1.1.9",
     "typescript": "^4.2.3"
   },
   "dependencies": {
     "@prisma/client": "^2.18.0",
+    "@types/cors": "^2.8.10",
+    "aws-lambda": "^1.0.6",
+    "aws-serverless-express": "^3.4.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",

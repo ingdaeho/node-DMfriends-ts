@@ -13,6 +13,6 @@
     "strictNullChecks": false,
     "skipLibCheck": true
   },
-  "include": ["./src/**/*"],
+  "include": ["./src/**/*", "src/handler.ts"],
   "exclude": ["node_modules", "dist"]
 }

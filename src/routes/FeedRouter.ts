@@ -2,7 +2,7 @@ import { Router } from "express";
 import { FeedController } from "../controllers";
 import { validateToken } from "../middlewares";
 
-const router = Router();
+const router = Router({ mergeParams: true });
 
 router.get("/", FeedController.getFeeds);
 router.get("/:feedId/comments", FeedController.getComments);
