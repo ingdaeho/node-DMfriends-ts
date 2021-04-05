@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import { errorGenerator, errorWrapper } from "../errors";
 import { UserService } from "../services";
-import { Express, Request, Response, NextFunction } from "express";
+import { Request, Response, NextFunction } from "express";
 import { users } from "@prisma/client";
 
 const { AUTH_TOKEN_SALT } = process.env;

@@ -6,7 +6,7 @@
     "outDir": "./build",
     "rootDir": "./src",
     "moduleResolution": "node",
-    // "lib": ["ES2015", "DOM", "DOM.Iterable"],
+    "lib": ["ES2015", "DOM", "DOM.Iterable"],
     "esModuleInterop": true,
     "strict": true,
     "noImplicitAny": false,

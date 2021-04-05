@@ -19,6 +19,8 @@ router.post(
   UserController.logIn
 );
 
+router.get("/", validateToken, UserController.getUserInfo);
+
 // cart
 router.get("/:userId/cart", validateToken, CartController.getCartItems);
 router.post("/:userId/cart", validateToken, CartController.addItem);

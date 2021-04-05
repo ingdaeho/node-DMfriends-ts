@@ -1,4 +1,4 @@
-import bcrypt, { hash } from "bcryptjs";
+import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { UserService } from "../services";
 import { errorWrapper, errorGenerator } from "../errors";
@@ -53,7 +53,15 @@ const logIn = errorWrapper(async (req: Request, res: Response) => {
   res.status(200).json({ message: "로그인 성공!", token });
 });
 
+const getUserInfo = errorWrapper(async (req: Request, res: Response) => {
+  const { id } = req.foundUser;
+
+  const userInfo = await UserService.findUser({ id });
+  res.status(200).json({ userInfo });
+});
+
 export default {
   signUp,
   logIn,
+  getUserInfo,
 };

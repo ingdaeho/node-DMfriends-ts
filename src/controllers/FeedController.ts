@@ -4,7 +4,7 @@ import { Request, Response } from "express";
 
 const getFeeds = errorWrapper(async (req: Request, res: Response) => {
   const feeds = await FeedService.findFeeds(req.query);
-  res.status(200).json({ feeds });
+  res.status(200).json(feeds);
 });
 
 const getComments = errorWrapper(async (req: Request, res: Response) => {
